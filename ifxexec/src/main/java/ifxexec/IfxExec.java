@@ -10,28 +10,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*
-  
-SELECT bandeira FROM codeptos WHERE bandeira IN("JDE", "JDC", "TOY")
-  
------ stderr
-Database selected.
-
-
-86 row(s) retrieved.
-
-
-Database closed.
------ stdout
-
-
-bandeira
-
-JDE
-JDE
-  
- */
-
 public class IfxExec {
 	
 	public static void main(String[] args) throws Exception {
@@ -209,6 +187,11 @@ public class IfxExec {
 			}
 			
 			cursor.close();
+		} else {
+			
+			// comando de atualizacao
+			stmt.execute(comando);
+			
 		}
 		
 		stmt.close();
